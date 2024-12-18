@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{margin: 1; padding: 1; }
+        input{
+            height: 0.5cm;
+            width: 1cm;
+        }
+        h1{
+            background-color:darkgreen ; color: white; text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        function Check()
+        {
+            var a=parseInt(document.getElementById("n1").value);
+            var b=parseInt(document.getElementById("n2").value);
+            var c=parseInt(document.getElementById("n3").value);
+            var d=parseInt(document.getElementById("n4").value);
+            var e=parseInt(document.getElementById("n5").value);
+            var total=a+b+c+d+e;
+            var perc=(total*100/500);
+            document.getElementById("data").innerHTML="Total Marks="+total;
+            document.getElementById("data1").innerHTML="Percentage="+perc+"%";
+
+            if(perc>=60)
+        {
+           document.getElementById("data2").innerHTML="Congrates! you got first division with" +perc+"%";
+        }
+        else if(perc>=45)
+        {
+           document.getElementById("data2").innerHTML="Congrates! you got Second division with" +perc+"%";
+        }
+        else if (perc>=33)
+        {
+           document.getElementById("data2").innerHTML="Congrates! you got third division with" +perc+ "%";
+        }
+        else
+        {
+           document.getElementById("data2").innerHTML="Sorry! you are fail with" +perc+"%";
+        }
+        }
+    </script>
+    <form>
+        <h1>Cheack your result status</h1>
+       English: <input type="text" id="n1">
+       Hindi: <input type="text" id="n2">
+       Math: <input type="text" id="n3">
+       Science: <input type="text" id="n4">
+       S.S.T: <input type="text" id="n5">
+       <button type="button" onclick="Check()">Result status</button>
+       <p id="data"></p>
+       <p id="data1"></p>
+       <p id="data2"></p>
+    </form>
+</body>
+</html>
